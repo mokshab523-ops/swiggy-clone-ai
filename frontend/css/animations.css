@@ -1,0 +1,119 @@
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    75% {
+        transform: translateX(5px);
+    }
+}
+
+/* Apply animations */
+.section.active {
+    animation: fadeIn 0.3s ease;
+}
+
+.modal.active {
+    animation: fadeIn 0.3s ease;
+}
+
+.order-card {
+    animation: fadeIn 0.3s ease;
+}
+
+.restaurant-card {
+    animation: fadeIn 0.4s ease;
+}
+
+.stat-card {
+    animation: fadeIn 0.3s ease;
+}
+
+/* Loading animation */
+.loading {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Smooth transitions */
+* {
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Button hover animations */
+.btn:active {
+    transform: scale(0.98);
+}
+
+/* Card hover lift */
+.offer-card,
+.restaurant-card,
+.order-card,
+.stat-card {
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Input focus animation */
+input:focus,
+select:focus,
+textarea:focus {
+    animation: scaleIn 0.2s ease;
+}

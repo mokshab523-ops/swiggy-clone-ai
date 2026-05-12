@@ -1,0 +1,361 @@
+/* Admin Styles */
+.admin-navbar {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 15px 0;
+    color: white;
+}
+
+.admin-nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.admin-logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.admin-nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.admin-container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    min-height: calc(100vh - 70px);
+}
+
+.admin-sidebar {
+    background: #2c3e50;
+    padding: 20px 0;
+    color: white;
+}
+
+.admin-sidebar .sidebar-link {
+    color: rgba(255,255,255,0.8);
+    border-left: 3px solid transparent;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.admin-sidebar .sidebar-link:hover,
+.admin-sidebar .sidebar-link.active {
+    background: rgba(255,255,255,0.1);
+    color: white;
+    border-left-color: #667eea;
+}
+
+.admin-content {
+    padding: 30px;
+    overflow-y: auto;
+    background: #f5f6fa;
+}
+
+/* Dashboard Grid */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 28px;
+}
+
+.stat-content h3 {
+    margin: 0;
+    font-size: 24px;
+    color: var(--text-dark);
+}
+
+.stat-content p {
+    margin: 0;
+    color: var(--text-light);
+    font-size: 14px;
+}
+
+/* Charts Grid */
+.charts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.chart-container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.chart-container h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+}
+
+/* Tables */
+.admin-table {
+    width: 100%;
+    background: white;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.admin-table thead {
+    background: #f8f9fa;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.admin-table th {
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: 14px;
+}
+
+.admin-table td {
+    padding: 15px;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-dark);
+    font-size: 14px;
+}
+
+.admin-table tbody tr:hover {
+    background: #f8f9fa;
+}
+
+.admin-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Filters */
+.order-filters,
+.users-filter,
+.restaurants-filter,
+.analytics-filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.order-filters input,
+.order-filters select,
+.users-filter input,
+.restaurants-filter input,
+.analytics-filters select {
+    padding: 10px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.order-filters input {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* Fraud Alerts */
+.fraud-alerts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.fraud-alert-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    border-left: 4px solid #e74c3c;
+}
+
+.fraud-alert-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.fraud-alert-id {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.fraud-score {
+    background: #e74c3c;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.fraud-alert-content {
+    margin-bottom: 15px;
+}
+
+.fraud-detail {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.fraud-detail-label {
+    color: var(--text-light);
+}
+
+.fraud-detail-value {
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.fraud-flags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.fraud-flag {
+    background: #ffe4e6;
+    color: #c92a3b;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.fraud-alert-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.fraud-alert-actions button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.fraud-alert-actions .btn-approve {
+    background: #d1e7dd;
+    color: #0f5132;
+}
+
+.fraud-alert-actions .btn-block {
+    background: #f8d7da;
+    color: #842029;
+}
+
+.fraud-alert-actions button:hover {
+    opacity: 0.8;
+}
+
+/* Analytics Cards */
+.analytics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.analytics-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.analytics-card h3 {
+    color: var(--text-light);
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.analytics-card p {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .admin-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .admin-sidebar {
+        display: none;
+    }
+    
+    .charts-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .admin-table {
+        font-size: 12px;
+    }
+    
+    .admin-table th,
+    .admin-table td {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stat-card {
+        flex-direction: column;
+        text-align: center;
+    }
+}
