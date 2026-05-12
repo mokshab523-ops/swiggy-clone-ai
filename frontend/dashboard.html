@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Swiggy Clone</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-utensils"></i> Swiggy Clone
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="#orders" class="nav-link">Orders</a>
+                <a href="#profile" class="nav-link">Profile</a>
+            </div>
+            <div class="nav-auth">
+                <span id="user-name"></span>
+                <button id="logout-btn" class="btn btn-outline">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-menu">
+                <a href="#orders" class="sidebar-link active" data-section="orders">
+                    <i class="fas fa-receipt"></i> My Orders
+                </a>
+                <a href="#profile" class="sidebar-link" data-section="profile">
+                    <i class="fas fa-user"></i> Profile
+                </a>
+                <a href="#addresses" class="sidebar-link" data-section="addresses">
+                    <i class="fas fa-map-marker-alt"></i> Addresses
+                </a>
+                <a href="#favorites" class="sidebar-link" data-section="favorites">
+                    <i class="fas fa-heart"></i> Favorites
+                </a>
+                <a href="#payments" class="sidebar-link" data-section="payments">
+                    <i class="fas fa-credit-card"></i> Payments
+                </a>
+                <a href="#settings" class="sidebar-link" data-section="settings">
+                    <i class="fas fa-cog"></i> Settings
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-content">
+            <!-- Orders Section -->
+            <section id="orders" class="section active">
+                <h2>My Orders</h2>
+                <div class="order-filters">
+                    <button class="filter-btn active" data-status="">All</button>
+                    <button class="filter-btn" data-status="pending">Pending</button>
+                    <button class="filter-btn" data-status="confirmed">Confirmed</button>
+                    <button class="filter-btn" data-status="preparing">Preparing</button>
+                    <button class="filter-btn" data-status="delivered">Delivered</button>
+                </div>
+                <div id="orders-container" class="orders-list">
+                    <!-- Orders will be loaded here -->
+                </div>
+            </section>
+
+            <!-- Profile Section -->
+            <section id="profile" class="section">
+                <h2>My Profile</h2>
+                <form id="profile-form" class="profile-form">
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" id="profile-first-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" id="profile-last-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="profile-email" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone</label>
+                        <input type="tel" id="profile-phone" disabled>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Update Profile</button>
+                </form>
+
+                <div class="change-password">
+                    <h3>Change Password</h3>
+                    <form id="password-form">
+                        <div class="form-group">
+                            <label>Current Password</label>
+                            <input type="password" id="old-password" required>
+                        </div>
+                        <div class="form-group">
+                            <label>New Password</label>
+                            <input type="password" id="new-password" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Confirm Password</label>
+                            <input type="password" id="confirm-password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Change Password</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Addresses Section -->
+            <section id="addresses" class="section">
+                <h2>My Addresses</h2>
+                <button id="add-address-btn" class="btn btn-secondary">Add New Address</button>
+                <div id="addresses-container" class="addresses-grid">
+                    <!-- Addresses will be loaded here -->
+                </div>
+            </section>
+
+            <!-- Favorites Section -->
+            <section id="favorites" class="section">
+                <h2>My Favorite Restaurants</h2>
+                <div id="favorites-container" class="restaurants-grid">
+                    <!-- Favorite restaurants will be loaded here -->
+                </div>
+            </section>
+
+            <!-- Payments Section -->
+            <section id="payments" class="section">
+                <h2>Payment Methods</h2>
+                <button id="add-payment-btn" class="btn btn-secondary">Add Payment Method</button>
+                <div id="payments-container" class="payments-list">
+                    <!-- Payment methods will be loaded here -->
+                </div>
+            </section>
+
+            <!-- Settings Section -->
+            <section id="settings" class="section">
+                <h2>Settings</h2>
+                <div class="settings-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="email-notifications" checked>
+                        Email Notifications
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="sms-notifications" checked>
+                        SMS Notifications
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="dark-mode">
+                        Dark Mode
+                    </label>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal for Order Details -->
+    <div id="order-detail-modal" class="modal">
+        <div class="modal-content order-detail">
+            <span class="close">&times;</span>
+            <h2>Order Details</h2>
+            <div id="order-detail-content">
+                <!-- Order details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toast-container"></div>
+
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/socket.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
